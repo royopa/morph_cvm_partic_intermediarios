@@ -85,8 +85,7 @@ def processa_arquivo(file_path):
     df.rename(columns=lambda x: x.strip(), inplace=True)
 
     for row in df.to_dict('records'):
-        #scraperwiki.sqlite.save(unique_keys=['CNPJ', 'DT_REF', 'DT_INI_RESP'], data=row)
-        scraperwiki.sqlite.save(data=row)
+        scraperwiki.sqlite.save(unique_keys=df.columns, data=row)
 
     print('{} Registros importados com sucesso'.format(len(df)))
 
