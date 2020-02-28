@@ -56,8 +56,6 @@ def download_arquivo():
     if download_file(url, file_path):
         processa_arquivo(file_path)
 
-    processa_arquivo(file_path)
-
     return True
 
 
